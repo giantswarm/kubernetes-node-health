@@ -48,9 +48,18 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:f622e77f879e0335d275c7df8f960327b1704d9b7d08488b58ca14fc58ec061a"
+  digest = "1:310f40b39fafa31cfb2120c87ef28292ae24f8ce746a7b851845e6832bd3884e"
   name = "github.com/giantswarm/microkit"
   packages = [
+    "command",
+    "command/daemon",
+    "command/daemon/flag",
+    "command/daemon/flag/config",
+    "command/daemon/flag/server",
+    "command/daemon/flag/server/listen",
+    "command/daemon/flag/server/log",
+    "command/daemon/flag/server/tls",
+    "command/version",
     "flag",
     "server",
     "tls",
@@ -155,6 +164,14 @@
   ]
   pruneopts = "UT"
   revision = "ef8a98b0bbce4a65b5aa4c368430a80ddc533168"
+
+[[projects]]
+  digest = "1:870d441fe217b8e689d7949fef6e43efbc787e50f200cb1e70dbca9204a1d6be"
+  name = "github.com/inconshreveable/mousetrap"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "76626ae9c91c4f2a10f34cad8ce83ea42c93bb75"
+  version = "v1.0"
 
 [[projects]]
   branch = "master"
@@ -268,6 +285,14 @@
   version = "v1.2.0"
 
 [[projects]]
+  digest = "1:645cabccbb4fa8aab25a956cbcbdf6a6845ca736b2c64e197ca7cbb9d210b939"
+  name = "github.com/spf13/cobra"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "ef82de70bb3f60c65fb8eebacbb2d122ef517385"
+  version = "v0.0.3"
+
+[[projects]]
   branch = "master"
   digest = "1:8a020f916b23ff574845789daee6818daf8d25a4852419aae3f0b12378ba432a"
   name = "github.com/spf13/jwalterweatherman"
@@ -343,12 +368,12 @@
   version = "v0.3.0"
 
 [[projects]]
+  branch = "v2"
   digest = "1:342378ac4dcb378a5448dd723f0784ae519383532f5e70ade24132c4c8693202"
   name = "gopkg.in/yaml.v2"
   packages = ["."]
   pruneopts = "UT"
   revision = "5420a8b6744d3b0345ab293f6fcba19c978f1183"
-  version = "v2.2.1"
 
 [solve-meta]
   analyzer-name = "dep"
@@ -359,6 +384,7 @@
     "github.com/giantswarm/microendpoint/service/healthz",
     "github.com/giantswarm/microendpoint/service/version",
     "github.com/giantswarm/microerror",
+    "github.com/giantswarm/microkit/command",
     "github.com/giantswarm/microkit/flag",
     "github.com/giantswarm/microkit/server",
     "github.com/giantswarm/micrologger",
