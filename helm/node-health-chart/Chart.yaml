@@ -1,0 +1,4 @@
+apiVersion: v1
+description: Kubernetes daemonset for dynamic and composable node health management.
+name: node-health-chart
+version: 0.1.0

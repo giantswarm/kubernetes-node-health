@@ -1,0 +1,6 @@
+image:
+  registry: quay.io
+  repository: giantswarm/node-health
+  tag: [[ .SHA ]]
+
+namespace: giantswarm
