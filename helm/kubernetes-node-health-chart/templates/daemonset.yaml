@@ -8,6 +8,9 @@ metadata:
 spec:
   updateStrategy:
     type: RollingUpdate
+  selector:
+    matchLabels:
+      app: kubernetes-node-health
   template:
     metadata:
       name: kubernetes-node-health
