@@ -1,6 +1,6 @@
 image:
   registry: quay.io
-  repository: giantswarm/node-health
+  repository: giantswarm/kubernetes-node-health
   tag: [[ .SHA ]]
 
 namespace: giantswarm

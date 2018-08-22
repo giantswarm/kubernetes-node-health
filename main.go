@@ -9,17 +9,17 @@ import (
 	"github.com/giantswarm/micrologger"
 	"github.com/spf13/viper"
 
-	"github.com/giantswarm/node-health/flag"
-	"github.com/giantswarm/node-health/server"
-	"github.com/giantswarm/node-health/service"
+	"github.com/giantswarm/kubernetes-node-health/flag"
+	"github.com/giantswarm/kubernetes-node-health/server"
+	"github.com/giantswarm/kubernetes-node-health/service"
 )
 
 var (
 	description string     = "Kubernetes daemonset for dynamic and composable node health management."
 	f           *flag.Flag = flag.New()
 	gitCommit   string     = "n/a"
-	name        string     = "node-health"
-	source      string     = "https://github.com/giantswarm/node-health"
+	name        string     = "kubernetes-node-health"
+	source      string     = "https://github.com/giantswarm/kubernetes-node-health"
 )
 
 func main() {

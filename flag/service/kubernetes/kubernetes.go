@@ -1,7 +1,7 @@
 package kubernetes
 
 import (
-	"github.com/giantswarm/node-health/flag/service/kubernetes/tls"
+	"github.com/giantswarm/kubernetes-node-health/flag/service/kubernetes/tls"
 )
 
 type Kubernetes struct {

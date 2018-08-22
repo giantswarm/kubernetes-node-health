@@ -1,28 +1,28 @@
 apiVersion: apps/v1
 kind: DaemonSet
 metadata:
-  name: node-health
+  name: kubernetes-node-health
   namespace: {{ .Values.namespace }}
   labels:
-    app: node-health
+    app: kubernetes-node-health
 spec:
   updateStrategy:
     type: RollingUpdate
   template:
     metadata:
-      name: node-health
+      name: kubernetes-node-health
       labels:
-        app: node-health
+        app: kubernetes-node-health
       annotations:
         releasetime: {{ $.Release.Time }}
     spec:
-      serviceAccountName: node-health
+      serviceAccountName: kubernetes-node-health
       containers:
       - image: "{{ .Values.image.registry }}/{{ .Values.image.repository }}:{{ .Values.image.tag }}"
-        name: node-health
+        name: kubernetes-node-health
         args:
         - daemon
-        - --config.dirs=/var/run/node-health/configmap/
+        - --config.dirs=/var/run/kubernetes-node-health/configmap/
         - --config.files=config
         livenessProbe:
           httpGet:
@@ -38,12 +38,12 @@ spec:
             cpu: 55m
             memory: 150Mi
         volumeMounts:
-        - name: node-health-configmap
-          mountPath: /var/run/node-health/configmap/
+        - name: kubernetes-node-health-configmap
+          mountPath: /var/run/kubernetes-node-health/configmap/
       volumes:
-      - name: node-health-configmap
+      - name: kubernetes-node-health-configmap
         configMap:
-          name: node-health-configmap
+          name: kubernetes-node-health-configmap
           items:
           - key: config.yaml
             path: config.yaml

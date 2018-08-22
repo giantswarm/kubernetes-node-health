@@ -3,6 +3,6 @@ FROM alpine:3.7
 RUN apk add --update ca-certificates \
     && rm -rf /var/cache/apk/*
 
-ADD ./node-health /node-health
+ADD ./kubernetes-node-health /kubernetes-node-health
 
-ENTRYPOINT ["/node-health"]
+ENTRYPOINT ["/kubernetes-node-health"]

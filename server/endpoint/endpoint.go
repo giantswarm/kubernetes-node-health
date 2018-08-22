@@ -7,7 +7,7 @@ import (
 	"github.com/giantswarm/microerror"
 	"github.com/giantswarm/micrologger"
 
-	"github.com/giantswarm/node-health/service"
+	"github.com/giantswarm/kubernetes-node-health/service"
 )
 
 // Config represents the configuration used to create a endpoint.

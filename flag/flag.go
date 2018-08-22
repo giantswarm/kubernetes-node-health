@@ -3,7 +3,7 @@ package flag
 import (
 	"github.com/giantswarm/microkit/flag"
 
-	"github.com/giantswarm/node-health/flag/service"
+	"github.com/giantswarm/kubernetes-node-health/flag/service"
 )
 
 type Flag struct {

@@ -1,7 +1,7 @@
 package service
 
 import (
-	"github.com/giantswarm/node-health/flag/service/kubernetes"
+	"github.com/giantswarm/kubernetes-node-health/flag/service/kubernetes"
 )
 
 type Service struct {

@@ -12,8 +12,8 @@ import (
 	"github.com/giantswarm/micrologger"
 	"github.com/spf13/viper"
 
-	"github.com/giantswarm/node-health/server/endpoint"
-	"github.com/giantswarm/node-health/service"
+	"github.com/giantswarm/kubernetes-node-health/server/endpoint"
+	"github.com/giantswarm/kubernetes-node-health/service"
 )
 
 // Config represents the configuration used to create a new server object.

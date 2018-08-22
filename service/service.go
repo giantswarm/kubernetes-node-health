@@ -8,8 +8,8 @@ import (
 	"github.com/giantswarm/micrologger"
 	"github.com/spf13/viper"
 
-	"github.com/giantswarm/node-health/flag"
-	"github.com/giantswarm/node-health/service/healthz"
+	"github.com/giantswarm/kubernetes-node-health/flag"
+	"github.com/giantswarm/kubernetes-node-health/service/healthz"
 )
 
 type Config struct {
