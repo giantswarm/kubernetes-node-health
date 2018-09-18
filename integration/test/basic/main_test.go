@@ -11,17 +11,25 @@ import (
 	"github.com/giantswarm/apprclient"
 	"github.com/giantswarm/e2e-harness/pkg/framework"
 	e2esetup "github.com/giantswarm/e2esetup/chart"
+	"github.com/giantswarm/e2esetup/chart/env"
+	"github.com/giantswarm/e2etests/managedservices"
 	"github.com/giantswarm/helmclient"
 	"github.com/giantswarm/micrologger"
 	"github.com/spf13/afero"
+	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
 const (
 	testName = "basic"
+
+	appName   = "kubernetes-node-health"
+	chartName = "kubernetes-node-health"
+	namespace = "giantswarm"
 )
 
 var (
 	a          *apprclient.Client
+	ms         *managedservices.ManagedServices
 	h          *framework.Host
 	helmClient *helmclient.Client
 	l          micrologger.Logger
@@ -74,6 +82,42 @@ func init() {
 			TillerNamespace: "giantswarm",
 		}
 		helmClient, err = helmclient.New(c)
+		if err != nil {
+			panic(err.Error())
+		}
+	}
+
+	{
+		c := managedservices.Config{
+			ApprClient:    a,
+			HelmClient:    helmClient,
+			HostFramework: h,
+			Logger:        l,
+
+			ChartConfig: managedservices.ChartConfig{
+				ChannelName:     fmt.Sprintf("%s-%s", env.CircleSHA(), testName),
+				ChartName:       chartName,
+				ChartValues:     "",
+				Namespace:       metav1.NamespaceSystem,
+				RunReleaseTests: false,
+			},
+			ChartResources: managedservices.ChartResources{
+				DaemonSets: []managedservices.DaemonSet{
+					{
+						Name:      appName,
+						Namespace: namespace,
+						Labels: map[string]string{
+							"app": appName,
+							"giantswarm.io/service-type": "managed",
+						},
+						MatchLabels: map[string]string{
+							"app": appName,
+						},
+					},
+				},
+			},
+		}
+		ms, err = managedservices.New(c)
 		if err != nil {
 			panic(err.Error())
 		}

@@ -5,6 +5,7 @@ metadata:
   namespace: {{ .Values.namespace }}
   labels:
     app: kubernetes-node-health
+    giantswarm.io/service-type: "managed"
 rules:
 - apiGroups:
   - ""
@@ -22,6 +23,7 @@ metadata:
   namespace: {{ .Values.namespace }}
   labels:
     app: kubernetes-node-health
+    giantswarm.io/service-type: "managed"
 subjects:
 - kind: ServiceAccount
   name: kubernetes-node-health

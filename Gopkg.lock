@@ -157,9 +157,10 @@
   packages = [
     "pkg/framework",
     "pkg/framework/filelogger",
+    "pkg/framework/resource",
     "pkg/harness"
   ]
-  revision = "b8f538cd46acde7bd3570348948080de2b07b8ae"
+  revision = "61c881543f171901fa178efbe52e076296b00bfe"
 
 [[projects]]
   branch = "master"
@@ -169,6 +170,12 @@
     "chart/env"
   ]
   revision = "649469c2d54fba4bf86b3e9bca96bd47435461ae"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/giantswarm/e2etests"
+  packages = ["managedservices"]
+  revision = "bc2f34dab1e20f4be9cfdf04bb1881d47f0daffe"
 
 [[projects]]
   branch = "master"
@@ -318,10 +325,10 @@
   version = "v1.2.0"
 
 [[projects]]
+  branch = "master"
   name = "github.com/google/go-github"
   packages = ["github"]
-  revision = "c3e9de61cf0678e682ea2b98cf1301ae3a814bc8"
-  version = "v18.1.0"
+  revision = "8c859bce4beadf04ba687d0efef6619ce2abca2a"
 
 [[projects]]
   branch = "master"
@@ -1167,6 +1174,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "9cd1e460d4d5cbf2b2393afedc990cfafac65a07aa5cd567882e29695b871756"
+  inputs-digest = "179f75bafb1778531eca762b6fc93a94ca4341a32a39ce9d025e44910613b05f"
   solver-name = "gps-cdcl"
   solver-version = 1
