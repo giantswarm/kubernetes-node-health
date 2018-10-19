@@ -5,7 +5,7 @@ metadata:
   namespace: {{ .Values.namespace }}
   labels:
     app: kubernetes-node-health
-    giantswarm.io/service-type: "managed"
+    giantswarm.io/service-type: "unmanaged"
 spec:
   updateStrategy:
     type: RollingUpdate
