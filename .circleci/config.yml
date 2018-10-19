@@ -78,15 +78,9 @@ jobs:
         name: Publish chart to beta channel on CNR
         command: ./architect publish
 
-  publish_to_stable:
-    machine: true
-    steps:
-    - checkout
-
-    - attach_workspace:
-        at: .
-
-    - run: ./architect publish --stable
+    - run:
+        name: Publish chart to stable channel on CNR
+        command: ./architect publish --stable
 
 workflows:
   version: 2
@@ -105,9 +99,3 @@ workflows:
           requires:
           - e2eTestBasic
 
-      - publish_to_stable:
-          filters:
-            branches:
-              only: master
-          requires:
-          - deploy
